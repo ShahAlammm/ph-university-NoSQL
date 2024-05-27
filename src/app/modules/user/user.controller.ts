@@ -16,12 +16,18 @@ const createStudent = async (
       studentData,
     );
 
-    sendResponse(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Student is created succesfully',
+
+    res.status(200).json({
       data: result,
     });
+
+
+    // sendResponse(res, {
+    //   statusCode: httpStatus.OK,
+    //   success: true,
+    //   message: 'Student is created succesfully',
+    //   data: result,
+    // });
   } catch (err) {
     next(err);
   }
