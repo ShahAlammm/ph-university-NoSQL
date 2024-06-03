@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+// import httpStatus from 'http-status';
 import { Schema, model } from 'mongoose';
 import { TAcademicDepartment } from './academicDepartment.interface';
 // import AppError from '../../errors/AppError';
