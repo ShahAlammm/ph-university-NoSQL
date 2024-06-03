@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+
 import mongoose from 'mongoose';
 import config from '../../config';
 import { TStudent } from '../student/student.interface';
