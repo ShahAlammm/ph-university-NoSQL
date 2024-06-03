@@ -54,8 +54,4 @@ export type TStudent = {
 //   isUserExists(id: string): Promise<TStudent | null>;
 // }
 
-export type StudentModel = Model<
-  TStudent,
-  Record<string, never>
-
->;
+export type StudentModel = Model<TStudent, Record<string, never>>;

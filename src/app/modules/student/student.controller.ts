@@ -16,8 +16,6 @@ const getAllStudents = catchAsync(async (req, res, next) => {
   });
 });
 
-
-
 const getSingleStudent = catchAsync(async (req, res, next) => {
   const { studentId } = req.params;
 
@@ -30,8 +28,6 @@ const getSingleStudent = catchAsync(async (req, res, next) => {
     data: result,
   });
 });
-
-
 
 const deleteStudent = catchAsync(async (req, res) => {
   const { studentId } = req.params;

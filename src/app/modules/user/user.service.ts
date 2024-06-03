@@ -1,4 +1,3 @@
-
 import mongoose from 'mongoose';
 import config from '../../config';
 import { TStudent } from '../student/student.interface';
@@ -7,7 +6,6 @@ import { AcademicSemester } from './../academicSemester/academicSemester.model';
 import { TUser } from './user.interface';
 import { User } from './user.model';
 import { generateSemesterId } from './user.utils';
-
 
 const createStudentIntoDB = async (password: string, payload: TStudent) => {
   // create a user object

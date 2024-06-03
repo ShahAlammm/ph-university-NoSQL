@@ -57,7 +57,7 @@ const updateAcademicSemester = catchAsync(async (req, res) => {
 
 export const AcademicSemesterControllers = {
   createAcademicSemester,
-    getAllAcademicSemesters,
-    getSingleAcademicSemester,
-    updateAcademicSemester,
+  getAllAcademicSemesters,
+  getSingleAcademicSemester,
+  updateAcademicSemester,
 };

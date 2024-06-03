@@ -42,7 +42,7 @@ const updateAcademicSemesterIntoDB = async (
 
 export const AcademicSemesterServices = {
   createAcademicSemesterIntoDB,
-    getAllAcademicSemestersFromDB,
-    getSingleAcademicSemesterFromDB,
-    updateAcademicSemesterIntoDB,
+  getAllAcademicSemestersFromDB,
+  getSingleAcademicSemesterFromDB,
+  updateAcademicSemesterIntoDB,
 };

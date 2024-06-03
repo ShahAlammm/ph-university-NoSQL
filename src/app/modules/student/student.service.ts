@@ -1,5 +1,4 @@
-import { Student } from "./student.model";
-
+import { Student } from './student.model';
 
 const getAllStudentsFromDB = async () => {
   const result = await Student.find();
