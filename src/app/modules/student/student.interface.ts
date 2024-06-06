@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Model, Types } from 'mongoose';
 
 export type TUserName = {
@@ -25,7 +26,6 @@ export type TLocalGuardian = {
 export type TStudent = {
   id: string;
   user: Types.ObjectId;
-  password: string;
   name: TUserName;
   gender: 'male' | 'female' | 'other';
   dateOfBirth?: Date;
@@ -39,19 +39,24 @@ export type TStudent = {
   localGuardian: TLocalGuardian;
   profileImg?: string;
   admissionSemester: Types.ObjectId;
+  academicDepartment: Types.ObjectId;
   isDeleted: boolean;
 };
 
 //for creating static
 
-// export interface StudentModel extends Model<TStudent> {
-//   isUserExists(id: string): Promise<TStudent | null>;
-// }
+export interface StudentModel extends Model<TStudent> {
+  isUserExists(id: string): Promise<TStudent | null>;
+}
 
-// for creating instance
+// // for creating instance
 
 // export interface StudentMethods {
 //   isUserExists(id: string): Promise<TStudent | null>;
 // }
 
-export type StudentModel = Model<TStudent, Record<string, never>>;
+// export type StudentModel = Model<
+//   TStudent,
+//   Record<string, never>,
+//   StudentMethods
+// >;

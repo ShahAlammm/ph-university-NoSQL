@@ -1,5 +1,4 @@
 // year semesterCode 4digit number
-
 import { TAcademicSemester } from '../academicSemester/academicSemester.interface';
 import { User } from './user.model';
 
