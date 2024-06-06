@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import mongoose from 'mongoose';
 import config from '../../config';
-// import AppError from '../../errors/AppError';
 import { TStudent } from '../student/student.interface';
 import { Student } from '../student/student.model';
 import { AcademicSemester } from '../academicSemester/academicSemester.model';
 import { TUser } from './user.interface';
 import { User } from './user.model';
 import { generateStudentId } from './user.utils';
+import AppError from '../../errors/AppError';
+import httpStatus from 'http-status';
 
 const createStudentIntoDB = async (password: string, payload: TStudent) => {
   // Create a user object
@@ -25,9 +26,9 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
   ).exec();
 
   if (!admissionSemester) {
-    throw new Error('Admission semester not found');
+    // throw new Error('Admission semester not found');
     // You might want to throw a custom error here using AppError
-    // throw new AppError(httpStatus.BAD_REQUEST, 'Admission semester not found');
+    throw new AppError(httpStatus.BAD_REQUEST, 'Admission semester not found');
   }
 
   const session = await mongoose.startSession();
@@ -43,8 +44,8 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
 
     // Create a student
     if (!newUser.length) {
-      // throw new AppError(httpStatus.BAD_REQUEST, 'Failed to create user');
-      throw new Error('Failed to create user');
+      throw new AppError(httpStatus.BAD_REQUEST, 'Failed to create user');
+
     }
 
     // Set id, _id as user
@@ -55,8 +56,8 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
     const newStudent = await Student.create([payload], { session });
 
     if (!newStudent.length) {
-      // throw new AppError(httpStatus.BAD_REQUEST, 'Failed to create student');
-      throw new Error('Failed to create student');
+      throw new AppError(httpStatus.BAD_REQUEST, 'Failed to create student');
+
     }
 
     await session.commitTransaction();
