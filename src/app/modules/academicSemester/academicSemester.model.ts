@@ -6,7 +6,6 @@ import {
 } from './academicSemester.constant';
 import { TAcademicSemester } from './academicSemester.interface';
 
-
 const academicSemesterSchema = new Schema<TAcademicSemester>(
   {
     name: {
@@ -51,7 +50,6 @@ academicSemesterSchema.pre('save', async function (next) {
   next();
 });
 
-
 export const AcademicSemester = model<TAcademicSemester>(
   'AcademicSemester',
   academicSemesterSchema,
@@ -62,8 +60,6 @@ export const AcademicSemester = model<TAcademicSemester>(
 // 2031 Autumn
 //2030 Autumn => XXX
 //2030 Fall => Created
-
-
 
 // Autumn 01
 // Summar 02
